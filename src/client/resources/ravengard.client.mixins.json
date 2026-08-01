@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "dev.brookie.ravengard.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"AbstractContainerScreenAccessor",
+		"AbstractContainerScreenMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

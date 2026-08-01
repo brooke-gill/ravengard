@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "ravengard",
+	"version": "${version}",
+	"name": "Ravengard Crown Thing",
+	"description": "Shows Crown values and tells you what items to swap out.",
+	"authors": [
+		"BrookeAFK"
+	],
+	"license": "MIT",
+	"icon": "assets/ravengard/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"dev.brookie.ravengard.client.RavengardClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "ravengard.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
