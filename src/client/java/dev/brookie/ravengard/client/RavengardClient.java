@@ -32,11 +32,14 @@ public final class RavengardClient implements ClientModInitializer {
 
 		ExtractItemDecorationsCallback.EVENT.register((graphics, font, stack, x, y) -> {
 			Minecraft client = Minecraft.getInstance();
-			if (!(client.gui.screen() instanceof AbstractContainerScreen<?>)) {
+			if (!(client.gui.screen() instanceof AbstractContainerScreen<?> screen)) {
 				return;
 			}
-			CrownOverlayRenderer.drawItemCrown(graphics, font, stack, x, y);
-			CrownOverlayRenderer.drawFavoriteMark(graphics, font, stack, x, y);
+			// include dragged part
+			if (screen.getMenu().getCarried() != stack) {
+				return;
+			}
+			CrownOverlayRenderer.drawCarriedItemMarkers(graphics, font, stack, x, y);
 		});
 
 		ScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {

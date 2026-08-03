@@ -70,7 +70,7 @@ public final class CrownLore {
 		}
 	}
 
-	private static String stripFormatting(String text) {
+	static String stripFormatting(String text) {
 		StringBuilder out = new StringBuilder(text.length());
 		for (int i = 0; i < text.length(); i++) {
 			char c = text.charAt(i);

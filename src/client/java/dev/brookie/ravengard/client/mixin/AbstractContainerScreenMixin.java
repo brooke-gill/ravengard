@@ -14,7 +14,7 @@ import dev.brookie.ravengard.client.CrownOverlayRenderer;
 @Mixin(AbstractContainerScreen.class)
 public abstract class AbstractContainerScreenMixin {
 	@Inject(method = "extractContents", at = @At("RETURN"))
-	private void ravengard$drawSwapHighlights(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float tickProgress, CallbackInfo ci) {
-		CrownOverlayRenderer.drawSwapHighlights((AbstractContainerScreen<?>) (Object) this, graphics);
+	private void ravengard$drawSlotOverlays(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float tickProgress, CallbackInfo ci) {
+		CrownOverlayRenderer.drawSlotOverlays((AbstractContainerScreen<?>) (Object) this, graphics);
 	}
 }
